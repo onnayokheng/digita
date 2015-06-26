@@ -15,6 +15,7 @@
 	<title>Digita - Open Digital Data</title>
 
 	<!-- Bootstrap core CSS -->
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Raleway:700,400' rel='stylesheet' type='text/css'>
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 
