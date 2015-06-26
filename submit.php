@@ -1,5 +1,5 @@
-<?php include 'header.php'; ?>
-
+<?php include 'header.php';
+if (!isset($_SESSION['user_id'])) header('location: login.php'); ?>
 	<div class="container">
 		<div class="starter-template">
 			<h1>SUBMIT DATA</h1>
