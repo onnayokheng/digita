@@ -36,7 +36,8 @@
 							<div class="profile">
 								<ul class="list-unstyled">
 								<?php $i=0;
-									foreach ($fields as $field) { ?>
+									foreach ($fields as $field) {
+										if( empty($data[$i][$field->name])) continue; ?>
 									<li><strong><?php echo $field->label; ?></strong>: <?php echo $data[$i][$field->name]; ?></li>
 								<?php $i++; } ?>
 								</ul>
