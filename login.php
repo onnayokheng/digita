@@ -1,6 +1,8 @@
 <?php 
-include 'header.php';
 if (isset($_POST['submit'])) {
+	//db connection
+	include 'conn.php';
+	session_start();
 	$q = mysqli_query($conn, "SELECT * FROM user WHERE username = '".$_POST['email']."'");
 	$d = mysqli_fetch_array($q);
 	if (isset($d) && $d['password']==md5($_POST['password'])) {
@@ -9,6 +11,7 @@ if (isset($_POST['submit'])) {
 		header('location: index.php');
 	} else $msg = 'Wrong email or password';
 }
+include 'header.php';
 ?>
 
 	<div class="container">

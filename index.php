@@ -11,6 +11,11 @@
 
 	<div class="container">
 		<div class="row">
+			<div class="col-sm-12">
+				<h2 class="page-title text-center">Database</h2><br><br>
+			</div>
+		</div>
+		<div class="row">
 			<!-- item start -->
 			<div class="col-sm-4 col-xs-6">
 				<div class="item-wrap thumbnail">
