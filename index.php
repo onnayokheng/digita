@@ -16,22 +16,29 @@
 			</div>
 		</div>
 		<div class="row">
+			<?php
+				$fields = json_decode(file_get_contents('config.json'));
+				$q = mysqli_query($conn, "SELECT * FROM mark");
+				if (mysqli_num_rows($q)==0) echo '<h3 class="text-center">No images processed</h3>';
+				else {
+					while ($mark = mysqli_fetch_array($q)) {
+						$data = json_decode($mark['data'],true);
+			?>
 			<!-- item start -->
 			<div class="col-sm-4 col-xs-6">
 				<div class="item-wrap thumbnail">
 					<a href="#" class="item-popup">
 						<figure>
-							<img src="http://placehold.it/250x250&text=avatar" alt="" class="img-responsive">
+							<img src="upload/<?php echo $mark['image_name']; ?>" alt="" class="img-responsive">
 						</figure>
 						<section class="item-content">
-							<h4 class="name">Tyohan Toting</h4>
+							<h4 class="name"><?php echo $mark['image_name']; ?></h4>
 							<div class="profile">
 								<ul class="list-unstyled">
-									<li><strong>Data 1</strong>: Value Data 1</li>
-									<li><strong>Data 2</strong>: Value Data 2</li>
-									<li><strong>Data 3</strong>: Value Data 3</li>
-									<li><strong>Data 4</strong>: Value Data 4</li>
-									<li><strong>Data 5</strong>: Value Data 5</li>
+								<?php $i=0;
+									foreach ($fields as $field) { ?>
+									<li><strong><?php echo $field->label; ?></strong>: <?php echo $data[$i][$field->name]; ?></li>
+								<?php $i++; } ?>
 								</ul>
 							</div>
 						</section>
@@ -39,6 +46,8 @@
 				</div>
 			</div>
 			<!-- end of item -->
+			<?php 	}
+				} ?>
 		</div>
 	</div>
 

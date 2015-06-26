@@ -6,5 +6,9 @@
 {
 	"name":"field2",
 	"label":"Field 2"
+},
+{
+	"name":"field3",
+	"label":"Field 3"
 }
 ]
