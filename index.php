@@ -25,7 +25,7 @@
 						$data = json_decode($mark['data'],true);
 			?>
 			<!-- item start -->
-			<div class="col-sm-4 col-xs-6">
+			<div class="col-sm-3 col-xs-6">
 				<div class="item-wrap thumbnail">
 					<a href="#" class="item-popup">
 						<figure>

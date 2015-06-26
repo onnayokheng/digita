@@ -96,7 +96,7 @@ body {
 .item-popup .name {
   position: absolute;
   left: 20px;
-  top: 30px;
+  top: 10px;
   color: #fff;
   text-shadow: 0 0 6px rgba(0,0,0,.6);
   font-size: 24px;
