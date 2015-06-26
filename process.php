@@ -13,5 +13,5 @@
 		}
 		$q = mysqli_query($conn,"INSERT INTO mark (image_name,user_id,data) VALUES ('".$_POST['image_name']."','".$_SESSION['user_id']."','".json_encode($data)."')");
 	}
-	header('location: index.php');
+	header('location: submit.php');
 ?>

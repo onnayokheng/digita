@@ -1,47 +1,39 @@
-<?php
-	//db connection
-	include 'conn.php';
-	
-	//load config
-	$fields = json_decode(file_get_contents('config.json'));
-	
-	//query processed image
-	$marks = array();
-	$q = mysqli_query($conn, "SELECT * FROM mark");
-	while ($mark = mysqli_fetch_array($q)) {
-		$marks[] = $mark['image_name'];
-	}
-	
-	//load folder and find unprocessed image
-	$found = false;
-	$filename = '';
-	$folder = opendir('upload');
-	while (($file = readdir($folder)) !== false && !$found) {
-		if (strlen($file)>2 && !in_array($file,$marks)) {
-			$filename = $file;
-			$found = true;
-		}
-	}
-	closedir($folder);
-	
-	//all images processed
-	if (!$found) {
-		echo 'All images done';
-	} else {
-?>
-	<form method="post" action="process.php">
-		<div class="form-group">
-			<img src="upload/<?php echo $filename; ?>" />
-			<input type="hidden" name="image_name" value="<?php echo $filename; ?>" />
+<?php include 'header.php'; ?>
+
+
+		<div class="container">
+			<div class="starter-template">
+				<h1>DIGITA</h1>
+				<p class="lead">Simple Apps for open source digital data.</p>
+			</div>
 		</div>
-		<br />
-<?php foreach ($fields as $field) { ?>
-		<div class="form-group">
-			<label><?php echo $field->label; ?></label>
-			<input type="text" name="<?php echo $field->name; ?>" class="form-control" placeholder="Enter <?php echo $field->label; ?>" required />
+
+		<div class="container">
+			<div class="row">
+				<!-- item start -->
+				<div class="col-sm-3">
+					<div class="item-wrap thumbnail">
+						<a href="#" class="item-popup">
+							<figure>
+								<img src="http://placehold.it/250x250&text=avatar" alt="">
+							</figure>
+							<section class="item-content">
+								<h4 class="name">Tyohan Toting</h4>
+								<div class="profile">
+									<ul class="list-unstyled">
+										<li><strong>Data 1</strong>: Value Data 1</li>
+										<li><strong>Data 2</strong>: Value Data 2</li>
+										<li><strong>Data 3</strong>: Value Data 3</li>
+										<li><strong>Data 4</strong>: Value Data 4</li>
+										<li><strong>Data 5</strong>: Value Data 5</li>
+									</ul>
+								</div>
+							</section>
+						</a>
+					</div>
+				</div>
+				<!-- end of item -->
+			</div>
 		</div>
-<?php } ?>
-		<br />
-		<input type="submit" name="submit" class="btn btn-primary" value="Save" />
-	</form>
-<?php } ?>
+
+<?php include 'footer.php'; ?>

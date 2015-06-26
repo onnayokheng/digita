@@ -1,3 +1,3 @@
 <?php
-	$conn = mysqli_connect("localhost","root","","digita") or die ("Unable to connect MySQL");
+	$conn = mysqli_connect("localhost","root","root","digita") or die ("Unable to connect MySQL");
 ?>
