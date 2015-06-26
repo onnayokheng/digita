@@ -44,9 +44,9 @@
 						<li><a href="about.php">About</a></li>
 						<li><a href="contact.php">Contact</a></li>
 					</ul>
-					<?php if (!isset($_SESSION['user_id'])) { ?>
+					<?php if (isset($_SESSION['user_id'])) { ?>
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">Hola, <strong>John Doe</strong>!</a></li>
+							<li><a href="#">Hola, <strong><?php echo $_SESSION['username']; ?></strong>!</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
 								<ul class="dropdown-menu">
