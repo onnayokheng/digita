@@ -96,7 +96,7 @@ body {
 .item-popup .name {
   position: absolute;
   left: 20px;
-  top: 10px;
+  top: 30px;
   color: #fff;
   text-shadow: 0 0 6px rgba(0,0,0,.6);
   font-size: 24px;
@@ -109,12 +109,12 @@ body {
 }
 .item-popup .profile {
   position: absolute;
-  bottom: 5px;
-  left: 0;
-  right: 0;
-  color: #000;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  color: #fff;
   border: 1px solid rgba(255,255,255,.4);
-  background-color: #fff;
+  background-color: rgba(255,255,255,.2);
   padding: 10px 15px;
   -webkit-transform: translate3d(0,40px,0);
   transform: translate3d(0,40px,0);
